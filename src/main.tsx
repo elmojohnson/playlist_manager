@@ -10,6 +10,8 @@ import Playlist from "./pages/playlist/Playlist";
 import ViewPlaylist from "./pages/playlist/ViewPlaylist";
 import NewPlaylist from "./pages/playlist/NewPlaylist";
 
+import ProtectedRoute from "./components/ProtectedRoute";
+
 const router = createBrowserRouter([
   {
     path: "*",
@@ -21,7 +23,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <Playlist />,
+    element: <ProtectedRoute><Playlist /></ProtectedRoute>,
     children: [
       {
         path: "/",
