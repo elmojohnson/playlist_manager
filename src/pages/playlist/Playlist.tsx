@@ -1,13 +1,14 @@
-import React from 'react'
-import {Outlet} from "react-router-dom"
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Layout from "../../layout/app/Layout";
 
 const Playlist = () => {
   return (
-    <div>
+    <Layout>
       <h1>Playlist</h1>
       <Outlet />
-    </div>
-  )
-}
+    </Layout>
+  );
+};
 
-export default Playlist
+export default Playlist;
