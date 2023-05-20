@@ -1,16 +1,19 @@
-import React from "react";
+import {Link} from "react-router-dom";
 import useMyPlaylists from "../../hooks/useMyPlaylists";
+import PlaylistItem from "../../components/items/PlaylistItem";
 
 const Sidebar = () => {
   const { playlists, isLoading } = useMyPlaylists();
+
   return (
-    <div className="bg-gray-200 h-full overflow-y-scroll">
+    <div className="bg-gray-200 h-full overflow-y-scroll p-4">
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <div>
+        <div className="flex flex-col">
+          <Link to="/">Home</Link>
           {playlists.map((playlist, i) => {
-            return <p key={i}>{playlist.name}</p>;
+            return <PlaylistItem key={i} {...playlist} />
           })}
         </div>
       )}
